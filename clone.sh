@@ -3,9 +3,9 @@ args=$*
 
 function remove_hals() {
     echo "Removing existing hals (if present)"
-    rm -rf hardware/qcom/sm8150/media
-    rm -rf hardware/qcom/sm8150/display
-    rm -rf hardware/qcom/sm8150/audio
+    rm -rf hardware/qcom-caf/sm8150/media
+    rm -rf hardware/qcom-caf/sm8150/display
+    rm -rf hardware/qcom-caf/sm8150/audio
 }
 
 function remove_trees() {
@@ -30,9 +30,9 @@ function clone_hals() {
     [[ "$args" =~ .*"--force".* ]] && remove_hals
     echo "======== Cloning hals ========"
     # Git clone
-    git clone https://github.com/ghostrider-reborn/android_hardware_qcom_display -b arrow-10.0-caf-6125 hardware/qcom/sm8150/display
-    git clone https://github.com/LineageOS/android_hardware_qcom_audio -b lineage-17.1-caf-sm8150 hardware/qcom/sm8150/audio
-    git clone https://github.com/LineageOS/android_hardware_qcom_media -b lineage-17.1-caf-sm8150 hardware/qcom/sm8150/media   
+    git clone https://github.com/ghostrider-reborn/android_hardware_qcom_display -b arrow-10.0-caf-6125 hardware/qcom-caf/sm8150/display
+    git clone https://github.com/LineageOS/android_hardware_qcom_audio -b lineage-17.1-caf-sm8150 hardware/qcom-caf/sm8150/audio
+    git clone https://github.com/LineageOS/android_hardware_qcom_media -b lineage-17.1-caf-sm8150 hardware/qcom-caf/sm8150/media   
 }
 
 if [[ "$args" =~ .*"--remove-all-only".* ]];then

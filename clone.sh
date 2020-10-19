@@ -37,14 +37,14 @@ function clone_hals() {
     git clone $base_url/hardware_qcom_media -b $branch hardware/qcom-caf/sm8150/media   
 }
 
-if [[ "$args" =~ .*"--remove-all-only".* ]];then
+if [[ "$args" =~ .*"--remove-all-nexit".* ]];then
     remove_trees
     remove_hals
     exit 0
-elif [[ "$args" =~ .*"--remove-trees-only".* ]];then
+elif [[ "$args" =~ .*"--remove-trees-nexit".* ]];then
     remove_trees
     exit 0
-elif [[ "$args" =~ .*"--remove-hals-only".* ]]; then
+elif [[ "$args" =~ .*"--remove-hals-nexit".* ]]; then
     remove_hals
     exit 0
 fi
